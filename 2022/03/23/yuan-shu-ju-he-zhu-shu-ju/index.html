@@ -1,0 +1,1464 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="元数据和主数据, 极客空间">
+    <meta name="description" content="　　企业数据管理的内容和范畴通常包含交易数据、主数据以及元数据。本文将主要针对主数据、元数据的相关概念以及应用跟大家做一个探讨。 
+1.1 主数据和主数据管理的概念　　企业主数据是用来描述企业核心业务实体的数据，比如客户、合作伙伴、员工、产">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>元数据和主数据 | 极客空间</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="极客空间" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">极客空间</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">极客空间</div>
+        <div class="logo-desc">
+            
+            No Code Is The Best Code.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">元数据和主数据</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%85%83%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">元数据</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%B8%BB%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">主数据</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/" class="post-category">
+                                数据仓库
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-03-23
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>　　企业数据管理的内容和范畴通常包含交易数据、主数据以及元数据。本文将主要针对主数据、元数据的相关概念以及应用跟大家做一个探讨。 </p>
+<h3 id="1-1-主数据和主数据管理的概念"><a href="#1-1-主数据和主数据管理的概念" class="headerlink" title="1.1 主数据和主数据管理的概念"></a>1.1 主数据和主数据管理的概念</h3><p>　　企业主数据是用来描述企业核心业务实体的数据，比如客户、合作伙伴、员工、产品、物料单、账户等；它是具有高业务价值的、可以在企业内跨越各个业务部门被重复使用的数据，并且存在于多个异构的应用系统中。</p>
+<p>　　企业主数据可以包括很多方面，除了常见的客户主数据之外，不同行业的客户还可能拥有其他各种类型的主数据，例如：对于电信行业客户而言，电信运营商提供的各种服务可以形成其产品主数据；对于航空业客户而言，航线、航班是其企业主数据的一种。对于某一个企业的不同业务部门，其主数据也不同，例如市场销售部门关心客户信息，产品研发部门关心产品编号、产品分类等产品信息，人事部门关心员工机构，部门层次关系等信息。</p>
+<h4 id="1-1-1数据管理的范畴和主数据管理的概念"><a href="#1-1-1数据管理的范畴和主数据管理的概念" class="headerlink" title="1.1.1数据管理的范畴和主数据管理的概念"></a>1.1.1数据管理的范畴和主数据管理的概念</h4><p>　　企业数据管理的内容及范畴通常包括交易数据、主数据以及元数据。</p>
+<ul>
+<li>·  　　  交易数据：用于纪录业务事件，如客户的订单，投诉记录，客服申请等，它往往用于描述在某一个时间点上业务系统发生的行为。</li>
+<li>·   　 主数据：主数据则定义企业核心业务对象，如客户、产品、地址等，与交易流水信息不同，主数据一旦被记录到数据库中，需要经常对其进行维护，从而确保其时效性和准确性；主数据还包括关系数据，用以描述主数据之间的关系，如客户与产品的关系、产品与地域的关系、客户与客户的关系、产品与产品的关系等。</li>
+<li>·   　　元数据：即关于数据的数据，用以描述数据及其环境的结构化信息，便于查找、理解、使用和管理数据。</li>
+</ul>
+<p>　　主数据管理是指一整套的用于生成和维护企业主数据的规范、技术和方案，以保证主数据的完整性、一致性和准确性。</p>
+<h4 id="1-1-2主数据管理的意义"><a href="#1-1-2主数据管理的意义" class="headerlink" title="1.1.2主数据管理的意义"></a>1.1.2主数据管理的意义</h4><p>　　集成、共享、数据质量、数据治理是主数据管理的四大要素，主数据管理要做的就是从企业的多个业务系统中整合最核心的、最需要共享的数据（主数据），集中进行数据的清洗和丰富，并且以服务的方式把统一的、完整的、准确的、具有权威性的主数据分发给全企业范围内需要使用这些数据的操作型应用和分析型应用，包括各个业务系统、业务流程和决策支持系统等。</p>
+<p>　　主数据管理使得企业能够集中化管理数据，在分散的系统间保证主数据的一致性，改进数据合规性、快速部署新应用、充分了解客户、加速推出新产品的速度。从 IT 建设的角度，主数据管理可以增强 IT 结构的灵活性，构建覆盖整个企业范围内的数据管理基础和相应规范，并且更灵活地适应企业业务需求的变化。</p>
+<p>　　以客户主数据为例，客户主数据是目前企业级客户普遍面临的一个问题，在大多数企业中，客户信息通常分散于 CRM 等各个业务系统中，而每个业务系统中都只有客户信息的片断，即不完整的客户信息，但却缺乏企业级的完整、统一的单一客户视图，结果导致企业不能完全了解客户，无法协调统一的市场行为，导致客户满意度下降，市场份额减少。因此，建立客户主数据系统的目的在于：</p>
+<p>·   　　整合并存储所有业务系统和渠道的客户及潜在客户的信息：一方面从相关系统中抽取客户信息，并完成客户信息的清洗和整合工作，建立企业级的客户统一视图；另一方面，客户主数据管理系统将形成的统一客户信息以广播的形式同步到其他各个系统，从而确保客户信息的一致；</p>
+<p>·   　　为相关的应用系统提供联机交易支持，提供客户信息的唯一访问入口点，为所有应用系统提供及时和全面的客户信息；服务于 OCRM 系统，充分利用数据的价值，在所有客户接触点上提供更多具有附加价值的服务；</p>
+<p>·   　 实现 SOA 的体系结构：建立客户主数据系统之前，数据被锁定在每一个应用系统和流程中，建立主数据管理系统之后，数据从应用系统中被释放出来，并且被处理成为一组可重用的服务，被各个应用系统调用。</p>
+<h4 id="1-1-3主数据管理系统与数据仓库系统的关系"><a href="#1-1-3主数据管理系统与数据仓库系统的关系" class="headerlink" title="1.1.3主数据管理系统与数据仓库系统的关系"></a>1.1.3主数据管理系统与数据仓库系统的关系</h4><p>　　主数据管理系统与数据仓库系统是相辅相成的两个系统，但二者绝不是重复的，也不是互斥的。它们有很多共同之处：</p>
+<ul>
+<li>·  　 首先二者对企业都具有相同的价值，可以减少数据冗余和不一致性、提升对数据的洞察力，二者都是跨部门的集中式系统；</li>
+<li>·     其次二者都依赖很多相同的技术手段，都会涉及到 ETL 技术、都需要元数据管理、都强调数据质量；</li>
+<li>·     第三就是二者建设手段类似，都需要数据治理的规范作为指导、都需要不同系统、不同部门的协作、需要统一的安全策略。</li>
+</ul>
+<p>但是，主数据管理系统和数据仓库 / 决策支持系统二者之间也存在很多不同：</p>
+<ul>
+<li>·     处理类型不同：主数据管理 (MDM) 系统是偏交易型的系统，它为各个业务系统提供联机交易服务，系统的服务对象是呼叫中心、B2C、CRM 等业务系统；而数据仓库是属于分析型的系统，面向的是分析型的应用，是在大量历史交易数据的基础上进行多维分析，系统的使用对象是各层领导和业务分析、市场销售预测人员等；</li>
+<li>·     实时性不同：与传统的数据仓库方案的批量 ETL 方式不同，主数据管理系统在数据初始加载阶段要使用 ETL，但在后续运行中要大量依赖实时整合的方式来进行主数据的集成和同步；</li>
+<li>·     数据量不同：数据仓库存储的是大量的历史数据和各个维度的汇总数据，可能会是海量的，而 MDM 存储的仅仅是客户和产品等信息。</li>
+</ul>
+<p>　　虽然主数据管理系统和数据仓库系统异同共存，但是二者却有着紧密的联系，并且可以互为促进、互为补充。举例而言，数据仓库系统的分析结果可以作为衍生数据输入到 MDM 系统，从而使 MDM 系统能够更好地为操作型 CRM 系统服务。</p>
+<h4 id="1-1-4主数据管理系统和-ODS-的关系"><a href="#1-1-4主数据管理系统和-ODS-的关系" class="headerlink" title="1.1.4主数据管理系统和 ODS 的关系"></a>1.1.4主数据管理系统和 ODS 的关系</h4><p>　　在某些情况下，主数据管理系统和 ODS 系统可能容易被混淆，的确，从实时上来看，主数据管理系统和 ODS 系统存储的都是实时数据，但是二者存储的数据内容是全然不同的，主数据管理系统中不存储交易数据，比如银行客户的交易流水信息是不应该放在主数据管理系统中进行管理的，这与 MDM 与 ODS 的一个很大区别。举一个航空公司的例子，比如某个客户在电子商务网站上定了一张机票，产生一个订单，然后他又通过呼叫中心要求改签，这个场景中，两个系统之间要实现客户信息和订单信息的共享，其中客户信息共享通过MDM 系统来实现，而订单信息则需要采用 ODS 或其它手段进行共享，我们是不推荐把此类信息交由 MDM 系统来管理的。</p>
+<h4 id="1-1-5主数据管理典型应用"><a href="#1-1-5主数据管理典型应用" class="headerlink" title="1.1.5主数据管理典型应用"></a>1.1.5主数据管理典型应用</h4><p>　　主数据管理的典型应用有客户管理与产品管理，主数据管理在金融行业典型的应用就是企业级客户信息整合系统(Enterprise Custome Information Facility，简称ECIF)，其目标是整合全行现有业务系统中的客户信息，保留客户的最新信息，为各应用系统提供完整的、共享的、一致的客户信息，建立企业级客户单一视图，在全行范围内为客户信息的使用和管理提供服务，为全行从“以产品为中心”的业务流程向“以客户为中心”的业务流程整合提供强有力的支持。</p>
+<h4 id="1-1-6基于元数据的主数据管理"><a href="#1-1-6基于元数据的主数据管理" class="headerlink" title="1.1.6基于元数据的主数据管理"></a>1.1.6基于元数据的主数据管理</h4><p>　　元数据管理作为企业数据资产管理中的一项核心技术，也将为主数据管理提供有力支撑，具体表现在：</p>
+<ul>
+<li>·     为业务实体的定义、关系和业务规则到IT实现之间提供清晰、标准的语义转换，提高业务和IT之间的一致性，保障IT系统能够真实反映业务事实；</li>
+<li>·     为主数据管理的各个数据处理阶段提供数据标准、数据映射关系和数据规则的描述，保障主数据管理的数据质量；</li>
+<li>·     为主数据库和其他系统之间的数据交互提供有关数据标准、数据映射关系和数据规则的描述。</li>
+</ul>
+<h3 id="1-2-元数据管理和管数据管理的概念"><a href="#1-2-元数据管理和管数据管理的概念" class="headerlink" title="1.2 元数据管理和管数据管理的概念"></a>1.2 元数据管理和管数据管理的概念</h3><h4 id="1-2-1元数据定义"><a href="#1-2-1元数据定义" class="headerlink" title="1.2.1元数据定义"></a>1.2.1元数据定义</h4><p>　　元数据（Meta Data）是关于数据的数据，当人们描述现实世界的现象时，就会产生抽象信息，这些抽象信息便可以看作是元数据，元数据主要用来描述数据的上下文信息。通俗的来讲，假若图书馆的每本书中的内容是数据的话，那么找到每本书的索引则是元数据，元数据之所以有其它方法无法比拟的优势，就在于它可以帮助人们更好的理解数据，发现和描述数据的来龙去脉，特别是那些即将要从OLTP系统上升到DW/BI体系建设的企业，元数据可以帮他们形成清晰直观的数据流图，元数据是数据管控的基本手段。</p>
+<p>　　元数据是为了提升共享、重新获取和理解企业信息资产的水平，元数据是企业信息管理的润滑剂，不对元数据进行管理或管理不得当，信息将被丢失或处于隐匿状态而难以被用户使用，数据集成将十分昂贵，不能对业务进行有效支撑。终端用户要识别相关的信息将十分困难，最终用户将失去对数据的信任。</p>
+<h4 id="1-2-2元数据分类"><a href="#1-2-2元数据分类" class="headerlink" title="1.2.2元数据分类"></a>1.2.2元数据分类</h4><p>　　元数据管理的范围将涵括数据产生、数据存储、数据加工和展现等各个环节的数据描述信息，帮助用户理解数据来龙去脉、关系及相关属性。按其描述对象的不同可以划分为三类元数据：技术元数据、业务元数据和管理元数据。这三种元数据的具体描述如下：</p>
+<ul>
+<li><strong>技术元数据</strong> 技术元数据是描述数据系统中技术领域相关概念、关系和规则的数据，主要包括对数据结构、数据处理方面的特征描述，覆盖数据源接口、数据仓库与数据集市存储、ETL、OLAP、数据封装和前端展现等全部数据处理环节；</li>
+<li><strong>业务元数据</strong> 业务元数据是描述数据系统中业务领域相关概念、关系和规则的数据，主要包括业务术语、信息分类、指标定义和业务规则等信息；</li>
+<li><strong>管理元数据</strong> 管理元数据是描述数据系统中管理领域相关概念、关系和规则的数据，主要包括人员角色、岗位职责和管理流程等信息。</li>
+</ul>
+<h4 id="1-2-3元数据管理的范围"><a href="#1-2-3元数据管理的范围" class="headerlink" title="1.2.3元数据管理的范围"></a>1.2.3元数据管理的范围</h4><p>　　元数据管理范围的不应仅仅局限于企业数据仓库、数据集市以及管理分类应用的数据，还应该将企业的业务系统的元数据纳入进来就行统一的管理，真正做到从源头对元数据进行管理，作为对数据的完整生命周期进行管理。</p>
+<h4 id="1-2-4元数据应用"><a href="#1-2-4元数据应用" class="headerlink" title="1.2.4元数据应用"></a>1.2.4元数据应用</h4><p><strong>1）</strong>   <strong>数据地图</strong></p>
+<p>　　数据地图展现是以拓扑图的形式对数据系统的各类数据实体、数据处理过程元数据进行分层次的图形化展现，并通过不同层次的图形展现粒度控制，满足开发、运维或者业务上不同应用场景的图形查询和辅助分析需要。</p>
+<p><strong>2）</strong>   <strong>元数据分析</strong></p>
+<ul>
+<li>·      血缘分析</li>
+</ul>
+<p>　　血缘分析（也称血统分析）是指从某一实体出发，往回追溯其处理过程，直到数据系统的数据源接口。对于不同类型的实体，其涉及的转换过程可能有不同类型，如：对于底层仓库实体，涉及的是ETL处理过程；而对于仓库汇总表，可能既涉及ETL处理过程，又涉及仓库汇总处理过程；而对于指标，则除了上面的处理过程，还涉及指标生成的处理过程。数据源接口实体由源系统提供，作为数据系统的数据输入，其它的数据实体都经过了一个或多个不同类型的处理过程。血缘分析正是提供了这样一种功能，可以让使用者根据需要了解不同的处理过程，每个处理过程具体做什么，需要什么样的输入，又产生什么样的输出。</p>
+<ul>
+<li>·     影响分析</li>
+</ul>
+<p>　　影响分析是指从某一实体出发，寻找依赖该实体的处理过程实体或其他实体。如果需要可以采用递归方式寻找所有的依赖过程实体或其他实体。该功能支持当某些实体发生变化或者需要修改时，评估实体影响范围。</p>
+<ul>
+<li>·     实体关联分析</li>
+</ul>
+<p>　　实体关联分析是从某一实体关联的其它实体和其参与的处理过程两个角度来查看具体数据的使用情况，形成一张实体和所参与处理过程的网络，从而进一步了解该实体的重要程度。本功能可以用来支撑需求变更影响评估的应用.</p>
+<ul>
+<li>·     实体差异分析</li>
+</ul>
+<p>　　实体差异分析是对元数据的不同实体进行检查，用图形和表格的形式展现它们之间的差异，包括名字、属性及数据血缘和对系统其他部分影响的差异等,在数据系统中存在许多类似的实体。这些实体（如数据表）可能只有名字上或者是在属性中存在微小的差异，甚至有部分属性名字都相同，但处于不同的应用中。由于各种原因，这些微小的差异直接影响了数据统计结果，数据系统需要清楚了解这些差异。本功能有助于进一步统一统计口径，评估近似实体的差异</p>
+<ul>
+<li>·     指标一致性分析</li>
+</ul>
+<p>　　指标一致性分析是指用图形化的方式来分析比较两个指标的数据流图是否一致，从而了解指标计算过程是否一致。该功能是指标血缘分析的一种具体应用。指标一致性分析可以帮助用户清楚地了解到将要比较的两个指标在经营分析数据流图中各阶段所涉及的数据对象和转换关系是否一致，帮助用户更好地了解指标的来龙去脉，清楚理解分布在不同部门且名称相同的指标之间的差异，从而提高用户对指标值的信任。</p>
+<p><strong>3）</strong>  <strong>辅助应用优化</strong></p>
+<p>　　元数据对数据系统的数据、数据加工过程以及数据间的关系提供了准确的描述，利用血缘分析、影响分析和实体关联分析等元数据分析功能，可以识别与系统应用相关的技术资源，结合应用生命周期管理过程，辅助进行数据系统的应用优化</p>
+<p><strong>4）</strong>   <strong>辅助安全管理</strong></p>
+<p>　　企业数据平台所存储的数据和提供的各类分析应用，涉及到公司经营方面的各类敏感信息。因此在数据系统建设过程中，须采用全面的安全管理机制和措施来保障系统的数据安全。</p>
+<p>　　数据系统安全管理模块负责数据系统的数据敏感度、客户隐私信息和各环节审计日志记录管理，对数据系统的数据访问和功能使用进行有效监控。为实现数据系统对敏感数据和客户隐私信息的访问控制，进一步实现权限细化，安全管理模块应以元数据为依据，由元数据管理模块提供敏感数据定义和客户隐私信息定义，辅助安全管理模块完成相关安全管控操作。</p>
+<p><strong>5）</strong>   <strong>基于元数据的开发管理</strong></p>
+<p>　　数据系统项目开发的主要环节包括：需求分析、设计、开发、测试和上线。开发管理应用可以提供相应的功能，对以上各环节的工作流程、相关资源、规则约束、输入输出信息等提供管理和支持。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Feynman Loo</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://feynmanloo.github.io/2022/03/23/yuan-shu-ju-he-zhu-shu-ju/">https://feynmanloo.github.io/2022/03/23/yuan-shu-ju-he-zhu-shu-ju/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Feynman Loo</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%85%83%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">元数据</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%B8%BB%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">主数据</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://s2.loli.net/2022/03/14/HxlwYSr8JFPAcaK.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://s2.loli.net/2022/03/14/392rC1sfgnz4X7u.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'qA5oniJOJvcYU7dcEX7vPVSk-gzGzoHsz',
+        appKey: 'NopagKHLuXtpT0WyKgtqmd0n',
+        serverURLs: '',
+        notify: 'true' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/03/24/docker-rong-qi-zhong-an-zhuang-mysql5-7/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Docker容器中安装Mysql5.7">
+                        
+                        <span class="card-title">Docker容器中安装Mysql5.7</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Mysql/" class="post-category">
+                                    Mysql
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Mysql/">
+                        <span class="chip bg-color">Mysql</span>
+                    </a>
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/03/16/30-sui-zuo-shi-me-ke-zai-5-nian-hou-shou-yi-fei-qian/">
+                    <div class="card-image">
+                        
+                        <img src="https://s2.loli.net/2022/03/16/3deKstMxjSZRXmQ.jpg" class="responsive-img" alt="30岁做什么，可在5年后受益匪浅？">
+                        
+                        <span class="card-title">30岁做什么，可在5年后受益匪浅？</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            最美好的生活方式，不是躺在床上睡到自然醒，也不是坐在家里无所事事，更不是走在街上随意购物；而是，和一群志同道合的人，一起奔跑在理想的路上，回头有一路的故事，低头有坚定的脚步，抬头有清晰的远方！
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%84%9F%E6%82%9F/" class="post-category">
+                                    感悟
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%BA%E7%94%9F/">
+                        <span class="chip bg-color">人生</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%84%9F%E6%82%9F/">
+                        <span class="chip bg-color">感悟</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">Feynman Loo</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "3";
+                        var startDate = "11";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+                <span id="icp"><img src="/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18140925号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/feynmanloo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:feynman0919@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=380614767" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 380614767" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
